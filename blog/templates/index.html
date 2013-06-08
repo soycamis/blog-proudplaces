@@ -1,0 +1,19 @@
+<!DOCTYPE>
+<html lang="es">
+<head>
+	<title>Blog Proudplaces</title>
+</head>
+<body>
+	<p>Hola mundo</p>
+	{% block content %}
+	    {% for Post in posts %}
+	      <h2>{{ Post.titulo }}</h2>
+	      <p>{{ Post.contenido}}</p>
+	      <p>
+	        {{ Post.creado }} |	        
+	      </p>
+	    {% endfor %}
+	{% endblock %}
+
+</body>
+</html>
