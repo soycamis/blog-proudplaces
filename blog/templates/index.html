@@ -1,21 +1,32 @@
 <!DOCTYPE>
 <html lang="es">
-<head>
-	<title>Blog Proudplaces</title>
-</head>
-<body>
-	<p>Hola mundo</p>
-	{% block content %}
-	    {% for Post in posts %}
-	      <h2>{{ Post.titulo }}</h2>
-	      <h3>{{ Post.img }}</h3>
-	      <img src={{ Post.img }} />
-	      <p>{{ Post.contenido}}</p>
-	      <p>
-	        {{ Post.creado }} |	        
-	      </p>
-	    {% endfor %}
-	{% endblock %}
+	<head>
+		<meta charset="utf-8">
+		<title>Blog Proudplaces</title>
+		<link rel="stylesheets" href="">
+	</head>
+	<body>
+		<header>
+			<h1>Blog Proudplaces</h1>
+		</header>
+		<section class="main_content">
+			{% block content %}
+				{% for Post in posts %}
+					<article>
+						<header>
+							<h2>{{ Post.titulo }}</h2>
+							<h3>{{ Post.img }}</h3>
+							<figure>
+								<img src="{{ Post.img }}">
+							</figure>
+						</header>
+						
+						{{ Post.contenido}}
 
-</body>
+						<p>{{ Post.creado }}</p>
+					</article>
+				{% endfor %}
+			{% endblock %}
+		</section>
+	</body>
 </html>
