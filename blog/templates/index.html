@@ -1,31 +1,58 @@
+{% load staticfiles %}
 <!DOCTYPE>
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<title>Blog Proudplaces</title>
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,600">
+		<link rel="stylesheet" href="{% static "css/normalize.css" %}">
+		<link rel="stylesheet" href="{% static "css/main.css" %}">
 	</head>
 	<body>
-		<header>
-			<h1>Blog Proudplaces</h1>
+		<header class="main_header">
+			<nav class="navigation">
+				<div class="row">
+					<ul class="main_nav clearfix">
+						<li><a href="http://proudplaces.com">App</a></li>
+					</ul>
+					<ul class="social_nav clearfix">
+						<li><a href="https://github.com/mejorandolaclase/mapa-turistico" target="_blank">Github</a></li>
+						<li><a href="https://plus.google.com/109178058455425148549" target="_blank">Google+</a></li>
+						<li><a href="https://twitter.com/proudplaces" target="_blank">Twitter</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="brand">
+				<div class="row">
+					<h1><a href="/"><img src="{% static "img/logo-proudplaces.png" %}" height="36" width="147"></a></h1>
+				</div>
+			</div>			
 		</header>
-		<section class="main_content">
-			{% block content %}
-				{% for Post in posts %}
-					<article>
-						<header>
-							<h2>{{ Post.title}}</h2>
-							<figure>
-								<img src={{ MEDIA_URL }}{{ Post.img }}>
-							</figure>
-						</header>
-						
-						{{ Post.content}}
 
-						<p>{{ Post.created|date:"d M"}}</p>
-					</article>
-				{% endfor %}
-			{% endblock %}
-		</section>
+		<div class="main_content">
+			<div class="row">
+				{% block content %}
+					{% for Post in posts %}
+						<article class="post">
+							<header>
+								<h2>{{ Post.title}}</h2>
+								<time datetime="{{ Post.created }}" class="date">{{ Post.created|date:"d M"}}</time>
+								<figure class="thumb">
+									<img src={{ MEDIA_URL }}{{ Post.img }}>
+								</figure>
+							</header>
+
+							{% autoescape off %}
+								{{ Post.content}}
+							{% endautoescape %}
+
+							<footer>
+								<!-- Enlaces redes sociales para compartir -->
+							</footer>						
+						</article>
+					{% endfor %}
+				{% endblock %}
+			</div>
+		</div>
 	</body>
 </html>
