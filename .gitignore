@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+media/*
+media/!.gitkeep
+db/*
+db/!.gitkeep
