@@ -8,6 +8,8 @@
 	{% block content %}
 	    {% for Post in posts %}
 	      <h2>{{ Post.titulo }}</h2>
+	      <h3>{{ Post.img }}</h3>
+	      <img src={{ Post.img }} />
 	      <p>{{ Post.contenido}}</p>
 	      <p>
 	        {{ Post.creado }} |	        

@@ -7,4 +7,4 @@ class Post(models.Model):
 	contenido = models.TextField()
 
 	def __unicode__(self):
-		return self.nombre
+		return self.titulo
