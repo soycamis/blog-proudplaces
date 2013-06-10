@@ -1,1 +1,31 @@
-body {color: #fff;}
+/* HTML */
+body {background: #f6f6f6; color: #444; font: 1em/1.4 'Open Sans', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;}
+h1, h2 {color: #333; font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif; font-weight: 700;}
+h1 {font-size: 1.8em;}
+h2 {font-size: 1.5em;}
+h3, strong {font-weight: 600;}
+nav ul {list-style: none; margin: 0; padding: 0;}
+a {color: #333; text-decoration: none;}
+a:hover {color: #111; text-decoration: underline;}
+
+/* Structure */
+.row {margin: auto; max-width: 700px;}
+
+/* Header */
+.navigation {font-size: .8em; padding: .5em 0;}
+.navigation li {display: inline-block; margin: 0 .5em;}
+.navigation a {color: #666;}
+.navigation a:hover {color: #333; text-decoration: none;}
+.main_nav {float: left;}
+.social_nav {float: right;}
+.brand {padding: 10em 0; text-align: center;}
+
+/* Content */
+.post {background: #fff; padding: 2em 3em; margin-bottom: 3em; box-shadow: 0 0 1em rgba(200, 200, 200, .1);}
+.post .thumb img {height: auto; max-width: 100%;}
+.post .date {display: block; margin: -1em 0 1em 0;}
+
+
+/* Helpers */
+.clearfix:before, .clearfix:after {content: " "; display: table;}
+.clearfix:after {clear: both;}

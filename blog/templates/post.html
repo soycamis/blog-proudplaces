@@ -31,26 +31,23 @@
 
 		<div class="main_content">
 			<div class="row">
-				{% block content %}
-					{% for Post in posts %}
-						<article class="post">
-							<header>
-								<a href="{{ Post.title|slugify }}"><h2>{{ Post.title}}</h2></a>
-								<time datetime="{{ Post.created }}" class="date">{{ Post.created|date:"d M"}}</time>
-								<figure class="thumb">
-									<img src={{ MEDIA_URL }}{{ Post.img }}>
-								</figure>
-							</header>
-							
-							{% autoescape off %}
-								{{ Post.content|truncatewords:100}}
-							{% endautoescape %}							
-							...<a class"more" href="{{ Post.title|slugify }}">Ver más</a>							
-							<footer>
-								<!-- Enlaces redes sociales para compartir -->
-							</footer>						
-						</article>
-					{% endfor %}
+				{% block content %}					
+					<article class="post">						
+						<header>
+							<h2>{{ Post.title }}</h2>
+							<time datetime="{{ Post.created }}" class="date">{{ Post.created|date:"d M"}}</time>
+							<figure class="thumb">
+								<img src={{ MEDIA_URL }}{{ Post.img }}>
+							</figure>
+						</header>
+						
+						{% autoescape off %}
+							{{ Post.content }}
+						{% endautoescape %}						
+						<footer>
+							<!-- Enlaces redes sociales para compartir -->
+						</footer>						
+					</article>					
 				{% endblock %}
 			</div>
 		</div>

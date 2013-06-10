@@ -9,6 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'blog.views.index_view', name='index_view'),
+    url(r'^(?P<post>([a-z]+-*)*)$', 'blog.views.post_view', name='post_view'),
     # url(r'^blog-proudplaces/', include('blog-proudplaces.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

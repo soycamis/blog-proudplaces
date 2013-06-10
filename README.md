@@ -1,12 +1,29 @@
-Requisitos:
+# Blog Proudplaces
 
-Django 1.5.1
-Python Image Library 
+Este blog se ha desarrollado con la idea de centralizar las notificaciones e informar a la comunidad de todo lo que está pasando y las novedades del proyecto colaborativo Proudplaces.
 
-Como funciona: 
+## Requisitos
 
-Vas a la terminal e instalas la libreria de imágenes de python con el siguiente comando: pip install pil
+* Python
+* SQlite
+* Django 1.5.1
+* Python Image Library
 
-Ejectuas "python manage.py syncdb" y el te preguntará si deseas crear el administrador web django, le das "yes" y luego ingresas el usuario y la contraseña que usarás para ingresar al administrador.
+## Como empezar
 
-Luego ejecutas "python manage.py runserver" y si vas a http:localhost:8000 verás los post ingresados en la base de datos y si vas a http:localhost:8000/admin podrás ingresar con el usuario y la contraseña que ingresaste, al administrador de django, para crear nuevos post.
+Si no tienen Python Image Library pueden instalarlo con el siguiente comando:
+
+	pip install pil
+
+Para crear la base de datos y activar el administrador tenemos que ejecutar el comando:
+
+	python manage.py syncdb
+	
+Nos preguntará si deseamos crear el administrador web Django, aceptamos escribiendo "yes" y luego nos preguntara el usuario y la contraseña que usaremos para acceder al administrador.
+
+Para iniciar la aplicación:
+	
+	python manage.py runserver
+	
+
+La aplicación se iniciará en http://localhost:8000 y el administrador se encuentra http:localhost:8000/admin, el usuario y contraseña son los que creaste anteriormente.
