@@ -1,0 +1,39 @@
+{% load staticfiles %}
+
+<!DOCTYPE>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Blog Proudplaces</title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,600">
+		<link rel="stylesheet" href="{% static "css/normalize.css" %}">
+		<link rel="stylesheet" href="{% static "css/main.css" %}">
+	</head>
+	<body>
+		<header class="main_header">
+			<nav class="navigation">
+				<div class="row">
+					<ul class="main_nav clearfix">
+						<li><a href="http://proudplaces.com">App</a></li>
+					</ul>
+					<ul class="social_nav clearfix">
+						<li><a href="https://github.com/mejorandolaclase/mapa-turistico" target="_blank">Github</a></li>
+						<li><a href="https://plus.google.com/109178058455425148549" target="_blank">Google+</a></li>
+						<li><a href="https://twitter.com/proudplaces" target="_blank">Twitter</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="brand">
+				<div class="row">
+					<h1><a href="/"><img src="{% static "img/logo-proudplaces.png" %}" height="36" width="147"></a></h1>
+				</div>
+			</div>			
+		</header>
+
+		<div class="main_content">
+			<div class="row">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>
