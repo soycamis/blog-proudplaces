@@ -26,4 +26,4 @@ Para iniciar la aplicación:
 	python manage.py runserver
 	
 
-La aplicación se iniciará en http://localhost:8000 y el administrador se encuentra http:localhost:8000/admin, el usuario y contraseña son los que creaste anteriormente.
+La aplicación se iniciará en http://localhost:8000 y el administrador se encuentra http:localhost:8000/admin/, el usuario y contraseña son los que creaste anteriormente.
