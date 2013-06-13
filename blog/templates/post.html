@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}					
+	<article class="post">						
+		<header>
+			<h2>{{ Post.title }}</h2>
+			<time datetime="{{ Post.created }}" class="date">{{ Post.created|date:"d M"}}</time>
+			<figure class="thumb">
+				<img src="{{ MEDIA_URL }}{{ Post.img }}">
+			</figure>
+		</header>
+
+		{% autoescape off %}
+			{{ Post.content }}
+		{% endautoescape %}
+
+		<footer>
+			<p>
+				<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://blog.proudplaces.com/{{ Post.title|slugify }}" data-lang="es" data-text="{{ Post.title }}" data-via="proudplaces">Tweet</a>
+			</p>
+		</footer>
+	</article>
+
+	<script>
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>				
+{% endblock %}
